@@ -11,22 +11,6 @@
 
 using android::base::GetProperty;
 
-constexpr const char* BUILD_DESCRIPTION = "OnePlusN200TMO-user 12 SKQ1.210216.001 11462c5_991-19c1d8 release-keys";
-constexpr const char* BUILD_FINGERPRINT = "OnePlus/OnePlusN200TMO/OnePlusN200TMO:12/SKQ1.210216.001/R.202306151713:user/release-keys";
-
-constexpr const char* RO_PROP_SOURCES[] = {
-    nullptr,
-    "bootimage.",
-    "odm.",
-    "odm_dlkm.",
-    "product.",
-    "system.",
-    "system_dlkm.",
-    "system_ext.",
-    "vendor.",
-    "vendor_dlkm.",
-};
-
 /*
  * SetProperty does not allow updating read only properties and as a result
  * does not work for our use case. Write "OverrideProperty" to do practically
@@ -43,28 +27,6 @@ void OverrideProperty(const char* name, const char* value) {
     }
 }
 
-void OverrideCarrierProperties() {
-    const auto ro_prop_override = [](const char* source, const char* prop, const char* value,
-                                     bool product) {
-        std::string prop_name = "ro.";
-
-        if (product) prop_name += "product.";
-        if (source != nullptr) prop_name += source;
-        if (!product) prop_name += "build.";
-        prop_name += prop;
-
-        OverrideProperty(prop_name.c_str(), value);
-    };
-
-    for (const auto& source : RO_PROP_SOURCES) {
-        ro_prop_override(source, "model", "DE2118", true);
-        ro_prop_override(source, "device", "OnePlusN200TMO", true);
-        ro_prop_override(source, "fingerprint", BUILD_FINGERPRINT, false);
-    }
-    ro_prop_override(nullptr, "product", "OnePlusN200TMO", false);
-    ro_prop_override(nullptr, "description", BUILD_DESCRIPTION, false);
-}
-
 /*
  * Only for read-only properties. Properties that can be wrote to more
  * than once should be set in a typical init script (e.g. init.oplus.hw.rc)
@@ -72,9 +34,13 @@ void OverrideCarrierProperties() {
  */
 void vendor_load_properties() {
     //auto device = GetProperty("ro.product.product.device", "");
-    auto prj_codename = GetProperty("ro.boot.project_codename", "");
+    auto prjname = std::stoi(GetProperty("ro.boot.prjname", "0"));
 
-    // T-Mobile (dre8t) or Metro by T-Mobile (dre8m)
-    if (prj_codename != "dre9")
-        OverrideCarrierProperties();
+    if (prjname == 20825) // Unlocked
+        OverrideProperty("ro.product.product.model", "CPH2459");
+    else { // T-Mobile or Metro (20826)
+        OverrideProperty("ro.product.product.model", "GN2200");
+        OverrideProperty("ro.product.product.device", "OP515AL1");
+        OverrideProperty("ro.product.product.name", "GN2200");
+    }
 }
