@@ -7,7 +7,7 @@
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-DEVICE_PATH := device/oneplus/dre
+DEVICE_PATH := device/oneplus/gunnar
 
 # A/B
 AB_OTA_UPDATER := true
@@ -44,7 +44,7 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := kryo385
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := OnePlusN200,OnePlusN200TMO,dre
+TARGET_OTA_ASSERT_DEVICE := OP5159L1,OP515AL1,gunnar
 
 # Audio
 AUDIO_FEATURE_ENABLED_DLKM := true
@@ -239,4 +239,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Include the proprietary files BoardConfig.
-include vendor/oneplus/dre/BoardConfigVendor.mk
+include vendor/oneplus/gunnar/BoardConfigVendor.mk

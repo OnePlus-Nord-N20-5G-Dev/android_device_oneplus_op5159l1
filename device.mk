@@ -17,7 +17,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/oneplus/dre/dre-vendor.mk)
+$(call inherit-product, vendor/oneplus/gunnar/gunnar-vendor.mk)
 
 # Set product shipping level
 PRODUCT_SHIPPING_API_LEVEL := 30
@@ -95,7 +95,7 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     sound_trigger.primary.holi:32
 
-# SM8350 audio HAL has SM4350 configurations.
+# SM8350 audio HAL has SM6375 configurations.
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8350/audio
 
 PRODUCT_COPY_FILES += \
