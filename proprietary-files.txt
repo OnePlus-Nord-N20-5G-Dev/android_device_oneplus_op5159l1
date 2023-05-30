@@ -330,7 +330,6 @@ odm/etc/camera/filters_res/film_grain_small.bin
 odm/etc/camera/filters_res/lut_all_points.png
 odm/etc/camera/filters_res/overlay_p4_3_weak.png
 odm/etc/camera/model/DocDetectV15.xbin
-odm/etc/camera/model/license.lic
 odm/etc/camera/pf/PerfectColorSet/normal/colorLut0
 odm/etc/camera/pf/PerfectColorSet/normal/colorLut1
 odm/etc/camera/pf/PerfectColorSet/normal/colorLut10
@@ -511,7 +510,6 @@ odm/etc/camera/pfb_bin/ThirdPartyPreSkintuneMRTBinary.bin
 odm/etc/camera/pfb_bin/ThirdPartyPreVertFilterBinary.bin
 odm/etc/camera/pfb_bin/ThirdPartyPreVertSurBinary.bin
 odm/etc/camera/singleblur/doubleloss_large.model
-odm/etc/camera/singleblur/license_release.license
 odm/etc/camera/singleblur/personseg.bin
 odm/etc/camera/singleblur/preview_seg.json
 odm/etc/camera/singleblur/singlut_background.png
