@@ -58,7 +58,6 @@ void OverrideCarrierProperties() {
 
     for (const auto& source : RO_PROP_SOURCES) {
         ro_prop_override(source, "model", "GN2200", true);
-        ro_prop_override(source, "device", "OP515AL1", true);
         ro_prop_override(source, "fingerprint", BUILD_FINGERPRINT, false);
     }
     ro_prop_override(nullptr, "product", "GN2200", false);
