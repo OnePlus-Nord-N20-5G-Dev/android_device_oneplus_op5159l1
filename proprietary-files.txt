@@ -591,6 +591,7 @@ odm/lib64/libAncSegmentSdk.so
 odm/lib64/libAlgoInterface.so
 odm/lib64/libAlgoProcess.so
 odm/lib64/libCOppLceTonemapAPI.so
+odm/lib64/libDeVIS.so
 odm/lib64/libEIS.so
 odm/lib64/libFaceBeautyCap.so
 odm/lib64/libFaceBeautyPre.so
@@ -655,6 +656,7 @@ odm/lib64/libsnpeml.so
 odm/lib64/libstblur_api.so
 odm/lib64/libstblur_capture_api.so
 odm/lib64/libstface_fd_api.so
+odm/lib64/libsymphony-cpu.so
 odm/lib64/libwatermark_photo.so
 odm/lib64/vendor.oplus.hardware.orms@1.0.so
 vendor/etc/camera/M_Attribute_AG_BMW_1.1.0.model.hardcode
@@ -782,6 +784,7 @@ vendor/lib64/com.qualcomm.mcx.policy.mfl.so
 vendor/lib64/com.qualcomm.qti.mcx.usecase.extension.so
 vendor/lib64/libaidenoiser.so
 vendor/lib64/libbitmlengine.so
+vendor/lib64/libbitmlenginev2.so
 vendor/lib64/libcamera_nn_stub.so
 vendor/lib64/libcamerapostproc.so
 vendor/lib64/libcamxexternalformatutils.so
@@ -905,6 +908,7 @@ vendor/lib64/vendor.qti.hardware.data.connection@1.1.so
 vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
 vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so
 vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
+vendor/lib64/vendor.qti.hardware.data.lce@1.0.so
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib64/vendor.qti.hardware.mwqemadapter@1.0.so
 vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
@@ -966,6 +970,7 @@ vendor/etc/init/qdcmss.rc
 vendor/etc/snapdragon_color_libs_config.xml
 vendor/lib64/libdisplayconfig.qti.so
 vendor/lib64/libdpps.so
+vendor/lib64/libhistogram.so
 vendor/lib64/libqdcm-mode-parser.so
 vendor/lib64/libqdutils.so
 vendor/lib64/libsdmcore.so
@@ -1057,8 +1062,10 @@ odm/bin/init.oplus.fingerprints.sh
 odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc
 odm/etc/vintf/manifest/manifest_oplus_fingerprint.xml
 odm/lib64/hw/fingerprint.goodix_G3.default.so
+odm/lib64/anc.capacitive.hal.so
 odm/lib64/anc.hal.so
 odm/lib64/libgf_hal_G3.so
+odm/lib64/vendor.oplus.hardware.biometrics.fingerprint@2.1.so
 odm/vendor/firmware/goodixfp.b00
 odm/vendor/firmware/goodixfp.b01
 odm/vendor/firmware/goodixfp.b02
@@ -1201,6 +1208,7 @@ vendor/lib64/vendor.qti.gnss@2.1.so
 vendor/lib64/vendor.qti.gnss@3.0.so
 vendor/lib64/vendor.qti.gnss@4.0-service.so
 vendor/lib64/vendor.qti.gnss@4.0.so
+vendor/lib64/vendor.qti.hardware.cacert@1.0.so
 
 # Hotword Enrollment
 my_product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml:product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml
@@ -1407,6 +1415,7 @@ vendor/lib/libOmxWmaDec.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libFlacSwDec.so
+vendor/lib64/libMpeghSwEnc.so
 vendor/lib64/libOmxAacDec.so
 vendor/lib64/libOmxAlacDec.so
 vendor/lib64/libOmxAlacDecSw.so
@@ -1516,6 +1525,7 @@ vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
+vendor/lib/libqmi_legacy.so
 vendor/lib/libqmiservices.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
@@ -1532,6 +1542,7 @@ vendor/lib64/libqmi_client_qmux.so
 vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
+vendor/lib64/libqmi_legacy.so
 vendor/lib64/libqmiservices.so
 
 # QSPM
@@ -1673,15 +1684,12 @@ odm/etc/sensor/config/holi_qrd_mmc56x3x.json
 odm/etc/sensor/config/holi_sx933x_0.json
 odm/etc/sensor/sensor_config.json
 odm/lib64/liboplus_service.so
-vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
 vendor/bin/init.qcom.sensors.sh
 vendor/bin/sensors.qti
 vendor/bin/sscrpcd
 vendor/etc/init/init.vendor.sensors.rc
-vendor/etc/init/vendor.qti.hardware.sensorscalibrate@1.0-service.rc
 vendor/etc/init/vendor.sensors.qti.rc
 vendor/etc/init/vendor.sensors.sscrpcd.rc
-vendor/etc/permissions/vendor-qti-hardware-sensorscalibrate.xml
 vendor/etc/sensors/config/holi_default_sensors.json
 vendor/etc/sensors/config/holi_dynamic_sensors.json
 vendor/etc/sensors/config/holi_power_0.json
@@ -1802,7 +1810,6 @@ vendor/etc/sensors/proto/sns_ultra_violet.proto
 vendor/etc/sensors/proto/sns_wrist_tilt_gesture.proto
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sns_reg_config
-vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
 vendor/lib64/libsensorcal.so
 vendor/lib64/libsensorslog.so
 vendor/lib64/libsns_device_mode_stub.so
@@ -1813,7 +1820,6 @@ vendor/lib64/libsnsdiaglog.so
 vendor/lib64/libssc.so
 vendor/lib64/libssc_default_listener.so
 vendor/lib64/sensors.ssc.so
-vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 # Snapdragon Computer Vision Engine
 vendor/lib/libfastcvdsp_stub.so
