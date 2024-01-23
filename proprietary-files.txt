@@ -950,14 +950,6 @@ vendor/firmware/evass.b19
 vendor/firmware/evass.mbn
 vendor/firmware/evass.mdt
 
-# Diag
-system_ext/lib/vendor.qti.diaghal@1.0.so
-system_ext/lib64/vendor.qti.diaghal@1.0.so
-vendor/bin/diag-router
-vendor/etc/init/vendor.qti.diag.rc
-vendor/lib/vendor.qti.diaghal@1.0.so
-vendor/lib64/vendor.qti.diaghal@1.0.so
-
 # Display (Features)
 vendor/etc/Oppo_QC_LTM_Commercial_SM8250_2020_01_15.pfm
 
